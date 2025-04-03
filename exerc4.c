@@ -21,6 +21,7 @@
     Saída:
     Outliers: 100 105
 */
+#include<stdio.h>
 
 int main (){
     int tam_vetor;
