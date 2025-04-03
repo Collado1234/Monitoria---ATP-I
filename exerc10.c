@@ -24,7 +24,7 @@ int main() {
     mdc = temp_a;
 
     // Cálculo do MMC usando a fórmula MMC(a, b) = (a * b) / MDC(a, b)
-    mmc = abs(a * b) / mdc;  // Forma otimizada para evitar overflow
+    mmc = (a * b) / mdc;  // Forma otimizada para evitar overflow
 
     // Saída do resultado
     printf("MMC: %d\n", mmc);

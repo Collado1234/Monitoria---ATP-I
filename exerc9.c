@@ -29,6 +29,7 @@
 
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 
 int main(){
     int ponto1[2], ponto2[2];
