@@ -20,7 +20,7 @@
 #include<stdio.h>
 
 int main(){
-    int num_scan1, num_scan2,quociente,zero_flag=0, divisor,MDC, resto_de_divisao;
+    int num_scan1, num_scan2, quociente, divisor, MDC;
     printf("Digite primeiro numero: ");
     scanf("%d", &num_scan1);
 
@@ -30,32 +30,17 @@ int main(){
     if(num_scan1 == 0 && num_scan2 == 0){
         printf("MDC indefinido para (0,0)\n");
         return -1;
-    }else if(num_scan1 == 0){
-        MDC = num_scan2;
-        zero_flag = 1;
-    }else if(num_scan2 == 0){
-        MDC = num_scan1;
-        zero_flag = 1;
     }
-    
-    if(zero_flag == 0){
-        if(num_scan1 > num_scan2){
-            quociente = num_scan1;
-            divisor = num_scan2;            
-        }else{
-            quociente = num_scan2;
-            divisor = num_scan1;
-        }
-
-        resto_de_divisao = quociente%divisor;
-        while(resto_de_divisao != 0){
-            quociente = divisor;
-            divisor = resto_de_divisao;
-
-            resto_de_divisao = quociente%divisor;
-        }
-        MDC = divisor;
+    quociente = num_scan1;
+    divisor = num_scan2;
+    while(divisor != 0){
+        int temp = divisor;
+        divisor = quociente%divisor;
+        quociente = temp;
     }
+
+    MDC = quociente;
+
     printf("MDC(%d,%d): %d\n",num_scan1,num_scan2,MDC);
     return 0;
 }
