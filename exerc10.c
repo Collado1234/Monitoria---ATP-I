@@ -16,7 +16,7 @@ int main() {
     temp_b = b;
 
     // Algoritmo de Euclides para calcular o MDC
-    while (temp_b != 0) {
+                while (temp_b != 0) {
         int resto = temp_a % temp_b;
         temp_a = temp_b;
         temp_b = resto;
