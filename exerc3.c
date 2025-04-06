@@ -6,7 +6,7 @@
 // N números inteiros.
 
 // Saída:
-// A média, a mediana, a moda (admita a possibilidade de ser bimodal) e o desvio padrão dos números.
+// A média, a mediana, a moda (admita a possibilidade de ser bimodal)
 
 // Exemplo:
 // Entrada:
@@ -17,7 +17,7 @@
 // Média: 2.4
 // Mediana: 2
 // Moda: 2
-// Desvio Padrão: 1.02
+
 
 #include<stdio.h>
 #include<limits.h>
@@ -50,7 +50,7 @@ int main (){
     int flagTroca;
     for(int i=0; i<tam_vetor-1;i++){
         flagTroca = 0;
-        for(int j = 0; j < tam_vetor-1; j++){
+        for(int j = 0; j < tam_vetor-1; j++){   //algoritmo Bubbble Sort (não se preocupar com isso agora)
             if(vetor[j] > vetor[j+1]){
                 auxTroca = vetor[j];
                 vetor[j] = vetor[j+1];
@@ -63,10 +63,10 @@ int main (){
 
     //Calculando a mediana
     float mediana;
-    if(tam_vetor%2){
-        mediana = vetor[tam_vetor/2];
+    if(tam_vetor%2){   
+        mediana = vetor[tam_vetor/2];  //localizando mediana
     }else{
-        mediana = (vetor[tam_vetor/2] + vetor[tam_vetor/2 -1])/2;
+        mediana = (vetor[tam_vetor/2] + vetor[tam_vetor/2 -1])/2;  
     }
     printf("Mediana: %.2f\n", mediana);
 
