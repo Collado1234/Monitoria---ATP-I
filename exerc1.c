@@ -36,7 +36,7 @@ int main() {
     for (i = 0; i < tam_vetor; i++) {
         printf("Elemento do índice [%d]: ", i);
         scanf("%f", &vetor[i]);
-        media += vetor[i];
+        media += vetor[i]; //calculando a média
     }
 
     media /= tam_vetor;  // Calcula a média
