@@ -1,12 +1,12 @@
 // 9. Cálculo de Distâncias: Euclidiana, Manhattan e Chebyshev
 // Descrição:
 //  Implemente um programa que receba as coordenadas de dois pontos no plano cartesiano e calcule três tipos diferentes de distância entre eles:
-// Distância Euclidiana:
-//  dE=(x2−x1)2+(y2−y1)2d_E = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}dE​=(x2​−x1​)2+(y2​−y1​)2​
-// Distância de Manhattan:
-//  dM=∣x2−x1∣+∣y2−y1∣d_M = |x_2 - x_1| + |y_2 - y_1|dM​=∣x2​−x1​∣+∣y2​−y1​∣
-// Distância de Chebyshev:
-//  dC=max⁡(∣x2−x1∣,∣y2−y1∣)d_C = \max(|x_2 - x_1|, |y_2 - y_1|)dC​=max(∣x2​−x1​∣,∣y2​−y1​∣)
+// Distância Euclidiana: (x1-x2)² + (y1-y2)²
+//
+// Distância de Manhattan: |x1-x2| + |y1-y2|
+//
+// Distância de Chebyshev: max(|x1-x2|,|y1-y2|)
+//
 // Entrada:
 // Dois números inteiros x1,y1x_1, y_1x1​,y1​ representando as coordenadas do primeiro ponto.
 // Dois números inteiros x2,y2x_2, y_2x2​,y2​ representando as coordenadas do segundo ponto.
