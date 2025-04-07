@@ -46,27 +46,51 @@ int main() {
             scanf("%d", &vetor_resposta[i]);
         }
 
-        int posicoes_corretas = 0;
-        int valor_corretos = 0;
-        int check_posicao_correta[10] = {0}; // para evitar contar duplicados
-        int check_numero_correto[10] = {0};
+        int corretos_posicao = 0;
+        int corretos_valor = 0;
+        int usados_senha[10] = {0}; // para evitar contar duplicados
+        int usados_resposta[10] = {0};
 
-
-        for(int i = 0; i < tam_senha; i++){
-            if(vetor_resposta[i]==vetor_senha[i]){
-                posicoes_corretas++;
-                check_numero_correto[i] = 1;
-                check_posicao_correta[i] = 1;
+        // verificar valores corretos na posição correta
+        for (int i = 0; i < tam_senha; i++) {
+            if (vetor_resposta[i] == vetor_senha[i]) {
+                corretos_posicao++;
+                usados_senha[i] = 1;
+                usados_resposta[i] = 1;
             }
         }
 
-        for(int i = 0; i<tam_senha; i++){
-            if(!check_posicao_correta[i])
+        // verificar valores corretos na posição errada
+        for (int i = 0; i < tam_senha; i++) {
+            if (!usados_resposta[i]) {
+                for (int j = 0; j < tam_senha; j++) {
+                    if (!usados_senha[j] && vetor_resposta[i] == vetor_senha[j]) {
+                        corretos_valor++;
+                        usados_senha[j] = 1;
+                        break;
+                    }
+                }
+            }
         }
-        
 
+        printf("Corretos na posição certa: %d\n", corretos_posicao);
+        printf("Corretos fora de posição: %d\n", corretos_valor);
 
-    }while(option_menu != 0);
+        if (corretos_posicao == tam_senha) {
+            printf("Parabéns! Você acertou a senha!\n");
+            break;
+        }
 
+        num_tentativas++;
+    }
 
+    if (num_tentativas == tam_tentativas) {
+        printf("Você excedeu o número de tentativas. A senha era: ");
+        for (int i = 0; i < tam_senha; i++) {
+            printf("%d", vetor_senha[i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
 }
