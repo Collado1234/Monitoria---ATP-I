@@ -25,13 +25,13 @@ int main(){
     //Outra forma
 
     parte_inteira = floor(numero_decimal); // Arredonda para baixo, PARA NÚMEROS NEGATIVOS	não funciona, precisa usar trunc, ou casting
-    parte_fracionaria = numero_decimal - parte_inteira; // Subtração para obter a parte fracionária
+    parte_fracionaria = numero_decimal - parte_inteira;
     printf("Parte inteira: %d\n", parte_inteira);
-    printf("Parte fracionária: %.2f\n", parte_fracionaria); // Formatação para duas casas decimais
+    printf("Parte fracionária: %.2f\n", parte_fracionaria); 
 
     // Outra forma
-    parte_inteira = numero_decimal; // Casting Implícito
-    parte_fracionaria = numero_decimal - parte_inteira; // Subtração para obter a parte fracionária
+    parte_inteira = numero_decimal;     // Casting Implícito
+    parte_fracionaria = numero_decimal - parte_inteira; 
     printf("Parte inteira: %d\n", parte_inteira);
     printf("Parte fracionária: %.2f\n", parte_fracionaria); // Formatação para duas casas decimais
 
