@@ -9,6 +9,8 @@
 // Exemplo: 5146 →  5+1+4+6 = 16
 
 #include<stdio.h>
+#include <stdlib.h> // Para usar abs()
+
 
 int main (){
     int numero,copia_numero ,soma = 0, digito_atual;
@@ -21,7 +23,7 @@ int main (){
         return 1;
     }
 
-    copia_numero = numero; // Armazena o número original para poder exibir depois
+    copia_numero = abs(numero); // Armazena o módulo do número original para poder exibir depois e não ter problema com numero negativo
 
     // Enquanto o número for maior que 0, continue somando os dígitos
     while (copia_numero > 0){
