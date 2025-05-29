@@ -26,7 +26,7 @@
 int main (){
     int tam_vetor;
     float posQ1,posQ2,posQ3,IQR;
-    float vetor_Quartil[3]; 
+    float vetor_Quartil[3]; //[Q1,Q2,Q3]
     float min, max;
 
     printf("Tamanho do vetor: ");
@@ -34,14 +34,15 @@ int main (){
     int vetor_num[tam_vetor];
 
     for(int i=0;i<tam_vetor; i++){
-        printf("Digite o numero da posicao [%d]: ",i);
-        scanf("%d", &vetor_num[i]);
+        // printf("Digite o numero da posicao [%d]: ",i);
+        // scanf("%d", &vetor_num[i]);
+        vetor_num[i] = i;
     }
 
     //1° Passo: Ordenar o vetor
     float auxTroca;
     int flagTroca;
-    for(int i=0; i<tam_vetor-1;i++){
+    for(int i=0; i<tam_vetor-i-1;i++){
         flagTroca = 0;
         for(int j = 0; j < tam_vetor-1; j++){
             if(vetor_num[j] > vetor_num[j+1]){
@@ -64,11 +65,16 @@ int main (){
     for(int i = 0; i < 3; i++){
         int idx = (int) posicoes_vetor[i];
         float frac = posicoes_vetor[i] - idx;
+        printf("idx: %d\n",idx);
+        printf("frac: %.2f\n",frac);
 
         if(frac == 0){
             vetor_Quartil[i] = vetor_num[idx-1];
         }else{
             vetor_Quartil[i] = vetor_num[idx-1]*(1-frac) + vetor_num[idx]*frac;  //interpolação
+            printf("Interpolação: %.2f\n",vetor_Quartil[i]);
+            printf("vetor_num[%d]: %d\n",idx-1,vetor_num[idx-1]);
+            printf("vetor_num[%d]: %d\n",idx,vetor_num[idx]);
         }   
     }
 
